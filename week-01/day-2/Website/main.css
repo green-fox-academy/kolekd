@@ -1,0 +1,80 @@
+body {
+	background-image: url("Background.png")
+}
+
+.topnav {
+	background: #333333;
+	padding: 8px;
+	
+}
+
+ul {
+	list-style-type: none;	
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	padding-right: 120px;
+	padding-left: 150px;	
+}
+
+li {
+	float: right;
+}
+
+li a {
+	display: block;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: underline;
+	color: #ff0099;
+	font-family: consolas, courier;
+	font-weight: 545		;
+}
+
+h1 {
+	font-size: 60px;
+	text-align: left;
+	padding-top: 40px;
+	line-height: 50px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h2 {
+	font-size: 32px;
+	text-align: left;
+	color: #ff0099;
+	line-height: 10px;
+	font-weight: 80;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h3 {
+	text-align: center;
+	line-height: 40px;
+	font-size: 35px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 40px;
+	line-height: 10px;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+h5 {
+	font-size: 30px;
+	display: inline;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+	text-align: left;
+	font-size: 20px;
+	font-family: consolas, courier;
+}
+
+main {
+	padding-left: 10%;
+	padding-right: 10%;
+
+}
