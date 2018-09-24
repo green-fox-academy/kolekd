@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Matrix {
     public static void main (String[] args){
 
@@ -11,15 +13,15 @@ public class Matrix {
         //
         // - Print this two dimensional array to the output
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4;j++) {
-                if (i == j){System.out.print("1 ");}
-                else if (i < 4){System.out.print("0 ");}
-            }
-            System.out.println();
+        int x = 4;
+        int y = 1;
+
+        int[][] matrix = new int [x][y];
+
+        for (int i = 0; i <= x; i++) {{
+            matrix[x]+=1;
         }
-
-
-
+            System.out.println(Arrays.deepToString(matrix));
+        }
     }
 }

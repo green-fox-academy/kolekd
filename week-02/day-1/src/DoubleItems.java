@@ -11,8 +11,5 @@ public class DoubleItems {
             numList[i] *= 2;
             System.out.print(numList[i] + " ");
         }
-
-
-
     }
 }
