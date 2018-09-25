@@ -1,5 +1,7 @@
+import java.util.Scanner;
+
 public class Factorial {
-    public static void main (String[] args){
+    public static void main (String[] args) {
 
         //  Create the usual class wrapper
         //  and main method on your own.
@@ -7,17 +9,18 @@ public class Factorial {
         // - Create a function called `factorio`
         //   that returns it's input's factorial
 
-        int input = 5;
-        int result = factorio(input);
+        Scanner in = new Scanner(System.in);
 
-        System.out.println(result);
-
+        int input = in.nextInt();
+        int result = process(input);
+        System.out.print(result);
 
     }
-    static int factorio (int input) {
-        int sum = input;
-        for (int i = input - 1; i != 0; i--) {
+    public static int process (int input){
+        int sum = 0;
+        for (int i = 0; i < input; i++) {
             sum *= i;
+            System.out.print(sum);
         }
         return sum;
     }

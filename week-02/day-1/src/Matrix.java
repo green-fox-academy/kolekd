@@ -19,7 +19,9 @@ public class Matrix {
         int[][] matrix = new int [x][y];
 
         for (int i = 0; i <= x; i++) {{
-            matrix[x]+=1;
+            for (int j = 0; j < i; j++) {
+
+            }
         }
             System.out.println(Arrays.deepToString(matrix));
         }
