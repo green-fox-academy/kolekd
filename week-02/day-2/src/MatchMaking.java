@@ -23,9 +23,9 @@ public class MatchMaking{
             {
                 hub.clear();
             }
-    }
+        }
         System.out.println("List:");
         System.out.print(pairs);
-    //    System.out.println(makingMatches(girls, boys));
+        //    System.out.println(makingMatches(girls, boys));
     }
 }
