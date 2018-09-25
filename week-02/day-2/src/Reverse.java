@@ -8,9 +8,9 @@ public class Reverse {
 
         String reversed = ".eslaf eb t'ndluow ecnetnes siht ,dehctiws erew eslaf dna eurt fo sgninaem eht fI";
 
-        StringBuilder reverse = new StringBuilder(reversed);
-        reverse.reverse();
+        StringBuilder swapLetters = new StringBuilder(reversed);
+        swapLetters.reverse();
 
-        System.out.println(reverse);
+        System.out.println(swapLetters);
     }
 }
