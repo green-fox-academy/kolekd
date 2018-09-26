@@ -9,7 +9,7 @@ public class ElementFinder{
         // Do this again with a different solution using different list methods!
 
         ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        System.out.println(containsSeven(arrayList));
+        //System.out.println(containsSeven(arrayList));
 
 
 
