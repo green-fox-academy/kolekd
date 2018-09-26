@@ -10,14 +10,14 @@ import java.util.Scanner;
 // and draws a line from that point to the center of the canvas.
 // Draw 3 lines with that function. Use loop for that.
 
-public class ToCenter {
+public class Trippy {
     public static void mainDraw(Graphics graphics) {
 
         Scanner in = new Scanner(System.in);
         Random rand = new Random();
 
         //System.out.println("Please input the desired number of lines.");
-        int NrOfLines = 150;
+        int NrOfLines = 5000;
         //System.out.println("Input the coordinates of the begginning point of your desired line." +
         //                    "\nPlease input the x coordinate of the beginning point");
         int inputx1 = 0;
@@ -35,13 +35,16 @@ public class ToCenter {
             Color randomColor = new Color(r, g, b);
             graphics.setColor(randomColor);
             {
-            line (inputx1, inputy1, graphics);}
-            inputy1 += 2;
+                line (inputx1, inputy1, graphics);}
+            if (inputy1 < 900 && inputx1 == 0){inputy1 += 2;}
+            if (inputy1 == 900 && inputx1 < 1600){inputx1 += 2;}
+            if (inputy1 > 0 && inputx1 ==1600){inputy1 -= 2;}
+            if (inputy1 == 0 && inputx1 > 0){inputx1 -= 1;}
         }
-        }
+    }
 
     public static void line (int inputx1, int inputy1, Graphics graphics){
-           graphics.drawLine(inputx1, inputy1, 150, 150 );
+        graphics.drawLine(inputx1, inputy1, 800, 450 );
     }
 
     // Don't touch the code below

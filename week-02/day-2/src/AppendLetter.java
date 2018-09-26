@@ -9,7 +9,7 @@ public class AppendLetter{
 
         List<String> far = Arrays.asList("bo", "anacond", "koal", "pand", "zebr");
 
-        System.out.println(appendA(far));
+        //System.out.println(appendA(far));
 
 
    //     System.out.println(appendA(far));
