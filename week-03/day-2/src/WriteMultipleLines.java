@@ -1,3 +1,10 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class WriteMultipleLines {
     public static void main (String[] args){
 
@@ -10,9 +17,23 @@ public class WriteMultipleLines {
         // to the file and each line should be "apple"
         // The function should not raise any error if it could not write the file.
 
-        
+        writeToFile();
 
+    }
+    public static void writeToFile (String path, String mrWord, int mrNumber){
+        Path mrPath = Paths.get(path);
 
+        List<String> words = new ArrayList<>();
+        for (int i = 0; i < mrNumber; i++) {
+            words.add(mrWord);
+        }
 
+        try {
+            Files.write(mrPath, words);
+            List<String> lines = Files.readAllLines(mrPath);
+            System.out.println(lines);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
