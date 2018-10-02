@@ -17,6 +17,7 @@ public class PrintEachLine {
 
         List<String> text = new ArrayList<>();
         text.add("First line of text.");
+        text.add("Second line of text.");
         Path myPath = Paths.get("my-file.txt");
 
         try {
