@@ -17,7 +17,11 @@ public class WriteMultipleLines {
         // to the file and each line should be "apple"
         // The function should not raise any error if it could not write the file.
 
-        writeToFile();
+        String path = "my-file3";
+        String mrWord = "I am a word.";
+        int mrNumber = 5;
+
+        writeToFile(path, mrWord, mrNumber);
 
     }
     public static void writeToFile (String path, String mrWord, int mrNumber){
