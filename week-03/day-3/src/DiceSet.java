@@ -1,11 +1,25 @@
 import java.util.Arrays;
 
 public class DiceSet {
-    // You have a `DiceSet` class which has a list for 6 dices
-// You can roll all of them with roll()
-// Check the current rolled numbers with getCurrent()
-// You can reroll with reroll()
-// Your task is to roll the dices until all of the dices are 6
+
+        // You have a `DiceSet` class which has a list for 6 dices
+        // You can roll all of them with roll()
+        // Check the current rolled numbers with getCurrent()
+        // You can reroll with reroll()
+        // Your task is to roll the dices until all of the dices are 6
+
+
+        //   public void allSixes(){
+        //       {
+        //           do {
+        //               reroll();
+        //               System.out.println(Arrays.toString(dices));
+        //           }
+        //           while (dices[0] != 6 || dices[1] != 6 || dices[2] != 6 || dices[3] != 6 || dices[4] != 6 || dices[5] != 6);
+        //       }
+        //   }
+
+
     int[] dices = new int[6];
 
     public int[] roll() {
@@ -33,27 +47,15 @@ public class DiceSet {
         dices[k] = (int) (Math.random() * 6) + 1;
     }
 
-//   public void allSixes(){
-//       {
-//           do {
-//               reroll();
-//               System.out.println(Arrays.toString(dices));
-//           }
-//           while (dices[0] != 6 || dices[1] != 6 || dices[2] != 6 || dices[3] != 6 || dices[4] != 6 || dices[5] != 6);
-//       }
-//   }
-
-
     public static void main(String[] args) {
         DiceSet diceSet = new DiceSet();
-        diceSet.allSixes();
-        diceSet.getCurrent();
-        diceSet.roll();
-        diceSet.getCurrent();
-        diceSet.getCurrent(5);
-        diceSet.reroll(0);
-        diceSet.getCurrent();
-        diceSet.reroll();
-        diceSet.getCurrent();
+
+        for (int i = 0; i < diceSet.dices.length; i++) {
+            do {diceSet.reroll(i);
+                System.out.println(Arrays.toString(diceSet.dices));
+            } while (diceSet.dices[i] != 6);
+
+        }
+
     }
 }
