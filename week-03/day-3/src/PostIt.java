@@ -15,13 +15,7 @@ public class PostIt {
 
     public void printPost(){
         System.out.println("This post has " + backgroundColor + " background, " + textColor +
-                "-coloured text and says: \"" + "\".");
-    }
-
-    public static void main (String[] args){
-
-        PostIt post = new PostIt("orange","Idea 1","blue");
-        PostIt post2 = new PostIt();
+                "-coloured text and says: \"" + text + "\".");
 
     }
 }
