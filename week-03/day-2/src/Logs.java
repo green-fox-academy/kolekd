@@ -26,14 +26,29 @@ public class Logs {
             List<String> lines = Files.readAllLines(logPath);
             List<String> linesCut = new ArrayList<>();
 
+            int getCount = 0;
+            int postCount = 0;
             for (int i = 0; i < lines.size(); i++) {
                 String buddy = lines.get(i);
-                String buddyCut = buddy.substring(28, 38);
-                linesCut.add(buddyCut);
-            }
+                if (buddy.contains("GET"));{
+                    getCount += 1;
+                } if (buddy.contains("POST")){
+                    postCount += 1;
+                }
 
-            Collections.sort(linesCut);
-            System.out.println(linesCut);
+            }
+            System.out.println(getCount);
+            System.out.println(postCount);
+
+ //  UNIQUE ADRESSES SETUP
+ //          for (int i = 0; i < lines.size(); i++) {
+ //              String buddy = lines.get(i);
+ //              String buddyCut = buddy.substring(28, 38);
+ //              linesCut.add(buddyCut);
+ //          }
+
+ //          Collections.sort(linesCut);
+ //          System.out.println(linesCut);
 
 
         } catch (Exception e){
