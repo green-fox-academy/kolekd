@@ -3,18 +3,16 @@ public class NumberAdder {
 
     // Write a recursive function that takes one parameter: n and adds numbers from 1 to n.
 
-
         System.out.println(add(5));
-
     }
 
     public static int add (int n){
 
-        int factorial = 0;
-        for (int i = 0; i <= n; i++) {
-            factorial+=i;
+        if (n == 1){
+            return 1;
+        } else {
+            return n+add(n-1);
         }
-        return factorial;
-    }
 
+    }
 }
