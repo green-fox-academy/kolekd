@@ -8,11 +8,11 @@ public class Strings2 {
 
     public static String stringie (String word, String former, int n){
         int count = word.length();
-        String cut = word.substring(n, n+1);
         String changed = "";
-        if(n == count - 1){
+        if(n == count ){
             return "";
         } else {
+            String cut = word.substring(n, n+1);
             return cut.replace(former,changed) + stringie(word,former,n + 1);
         }
 
