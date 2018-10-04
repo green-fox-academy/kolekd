@@ -3,17 +3,21 @@ public class Strings2 {
 
         // Given a string, compute recursively a new string where all the 'x' chars have been removed.
 
-        System.out.println (stringie("Mxxasxsachxusxxetxtxxs", "x", 0));
+        System.out.println (stringie("Mxxasxsachxusxxetxtxxs", "x"));
     }
 
-    public static String stringie (String word, String former, int n){
+    public static String stringie (String word, String former){
         int count = word.length();
         String changed = "";
-        if(n == count ){
+        if(count == 0){
             return "";
         } else {
-            String cut = word.substring(n, n+1);
-            return cut.replace(former,changed) + stringie(word,former,n + 1);
+            String cut = word.substring(0,1);
+            String rest = word.substring(1);
+            if (cut.equals("x")){
+                cut = "";
+            }
+            return cut + stringie(rest, former);
         }
 
     }
