@@ -11,7 +11,7 @@ public class Bunnies {
     public static int bunnies (int n){
         if(n == 1){
             return 2;
-            } else {
+        } else {
             return 2 + bunnies(n-1);
         }
 
