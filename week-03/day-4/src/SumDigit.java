@@ -14,7 +14,7 @@ public class SumDigit {
     }
 
     public static int digits(int n){
-        if (n == 1){
+        if (n == 1 || n < 0){
             return 1;
         } else {
             System.out.println();
