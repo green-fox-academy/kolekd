@@ -15,8 +15,12 @@ public class FractalTriangle {
         float blue = rand.nextFloat();                     //Random Colour
         Color randomColor = new Color(red, green, blue);
 
-        int xCenter = 400;
-        int yCenter = 400;
+        int xCenter = rand.nextInt(550 + 1 - 250) + 250;
+        int yCenter = rand.nextInt(550 + 1 - 250) + 250;
+
+
+//        int xCenter = 400;
+//        int yCenter = 400;
 
         int borderSize = rand.nextInt(300 + 1 - 250) + 250;
         int borderSizeStatic = 300;                     // In case of need to stop the size changing.
@@ -162,7 +166,7 @@ public class FractalTriangle {
             }
             panel.repaint();
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
