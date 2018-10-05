@@ -6,7 +6,7 @@ import java.util.Scanner;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import static javax.swing.JFrame.setDefaultLookAndFeelDecorated;
 
-public class FractalTriangle {
+public class TestArea {
     public static void mainDraw(Graphics graphics) {
         Random rand = new Random();                    //Random + Scanner
         Scanner in = new Scanner(System.in);
@@ -25,25 +25,25 @@ public class FractalTriangle {
         int b = (int) bConv;
         int c = (int) cConv;
 
-        int x1 = 700;
-        int y1 = 450;
+        int xCenter = 800;
+        int yCenter = 450;
 
-        int borderSize = 400;
-        int size = 200;
+        int borderSize = 500;
+        int size = borderSize/2;
 
-        tringleBorder(borderSize,graphics);
-        tringle(size, graphics);
+        tringleBorder(xCenter, yCenter, borderSize,graphics);
+        tringle(xCenter, yCenter, borderSize, size, graphics);
 
     }
 
-    public static void tringleBorder (int size, Graphics graphics){
+    public static void tringleBorder (int xCenter, int yCenter, int size, Graphics graphics){
 
         double cConv = size;
         double aConv = cConv*2;
         double bConv = Math.sqrt((Math.pow(aConv,2))-(Math.pow(cConv,2)));
 
-        double ConvX = 800-size;
-        double ConvY = 450-size;
+        double ConvX = xCenter-size;
+        double ConvY = yCenter-size;
 
         int borderX1 = (int) ConvX;
         int borderY1 = (int) ConvY;
@@ -67,14 +67,17 @@ public class FractalTriangle {
 
     }
 
-    public static void tringle (int size, Graphics graphics){
+    public static void tringle (int xCenter, int yCenter, int borderSize, int size, Graphics graphics){
 
         double cConv = size;
         double aConv = cConv*2;
         double bConv = Math.sqrt((Math.pow(aConv,2))-(Math.pow(cConv,2)));
 
-        double ConvX = (800-size);
-        double ConvY = (450-size)+(bConv/2);
+        double altC = borderSize;
+        double altA = altC*2;
+        double altB =  Math.sqrt((Math.pow(altA,2))-(Math.pow(altC,2)));
+        double ConvX = (xCenter-(borderSize/2));
+        double ConvY = (yCenter-(borderSize))+(altB/2);
 
         int borderX1 = (int) ConvX;
         int borderY1 = (int) ConvY;
