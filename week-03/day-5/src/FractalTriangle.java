@@ -109,6 +109,7 @@ public class FractalTriangle {
         graphics.drawLine(StartX1,StartY1,X2,Y2);
         graphics.drawLine(X2,Y2,X3,Y3);
         graphics.drawLine(X3,Y3,StartX1,StartY1);
+
         int[]trianglePolygonX = {StartX1,X2,X3};
         int[]trianglePolygonY = {StartY1,Y2,Y3};
         graphics.fillPolygon(trianglePolygonX,trianglePolygonY,3);
