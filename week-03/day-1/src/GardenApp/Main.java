@@ -17,7 +17,7 @@ public class Main {
 
 
         Garden garden = new Garden();
-        garden.addFlower(yellow);
+        garden.addFlower();
         garden.addFlower(blue);
         garden.addTree(purple);
         garden.addTree(orange);

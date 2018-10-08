@@ -5,15 +5,14 @@ import java.util.List;
 
 public class Garden {
 
-    private List<Flower> flowers;
-    private List<Tree> trees;
+    private List<Plant> plants;
 
-    public void addFlower (Flower flower){
-        flowers.add(flower);
+    public void addFlower (Plant plant){
+        plants.add(plant);
     }
 
     public void addTree (Tree tree){
-        trees.add(tree);
+        plants.add(tree);
     }
 
     public Garden(){
