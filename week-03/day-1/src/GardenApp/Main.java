@@ -3,10 +3,11 @@ package GardenApp;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.awt.Color.yellow;
+
 public class Main {
     public static void main(String[] args) {
 
-        ArrayList<Plant> plants = new ArrayList<Plant>();
 
         Tree purple = new Tree(10, 40, "purple", 0);
         Tree orange = new Tree(10, 40, "orange", 0);
@@ -14,17 +15,20 @@ public class Main {
         Flower yellow = new Flower(5, 70,"yellow", 0);
         Flower blue = new Flower(5, 10, "blue", 0);
 
-        plants.add(yellow);
-        plants.add(blue);
 
-        plants.add(purple);
-        plants.add(orange);
+        Garden garden = new Garden();
+        garden.addFlower(yellow);
+        garden.addFlower(blue);
+        garden.addTree(purple);
+        garden.addTree(orange);
 
 
-        yellow.watering(40);
-        System.out.println(yellow.toString());
+        System.out.println(garden.checkIfThirsty());
 
-        System.out.println();
+        garden.watering(40, garden.checkIfThirsty(), garden);
 
+        System.out.println(garden.checkIfThirsty());
+
+        }
     }
-}
+

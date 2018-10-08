@@ -1,12 +1,14 @@
 package GardenApp;
 
+import java.util.ArrayList;
+
 public class Plant{
 
-    private int currentWater;
-    private int minWater;
+    public int currentWater;
+    public int minWater;
     private int waterAbsorption;
     private String type;
-    private boolean thirsty = currentWater < minWater;
+    public boolean thirsty = currentWater < minWater;
 
     public Plant(int minWater, int waterAbsorption, String type, int currentWater) {
         this.minWater = minWater;
@@ -16,16 +18,10 @@ public class Plant{
     }
 
 
+    public String plantName() {return "" + type;}
     @Override
     public String toString() {
-        return "" + currentWater;
+        return "Current water: " + currentWater + ", minWater: " + minWater;
     }
 
-    public void needsWater (boolean thirsty){
-
-    }
-
-    public void watering (int pouringWater){
-            currentWater += pouringWater;
-        }
 }
