@@ -23,11 +23,11 @@ public class Main {
         garden.addTree(orange);
 
 
-        System.out.println(garden.checkIfThirsty());
+        System.out.println(garden.checkIfThirstyAll());
 
-        garden.watering(40, garden.checkIfThirsty(), garden);
+        garden.watering(40, garden.checkIfThirsty());
 
-        System.out.println(garden.checkIfThirsty());
+        System.out.println(garden.checkIfThirstyAll());
 
         }
     }
