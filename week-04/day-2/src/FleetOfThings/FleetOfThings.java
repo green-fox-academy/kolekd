@@ -8,6 +8,8 @@ public class FleetOfThings {
     public static void main(String[] args) {
 
         Fleet fleet = new Fleet();
+        Fleet fleetX = new Fleet();
+
         // Create a fleet of things to have this output:
         // 1. [ ] Get milk
         // 2. [ ] Remove the obstacles
@@ -22,24 +24,29 @@ public class FleetOfThings {
         String fansString = "Meet the fans";
 
         Thing obstacles = new Thing(obstaclesString);
-        Thing standUp = new Thing(standUpString);
+        Thing stand = new Thing(standUpString);
         Thing lunch = new Thing(lunchString);
         Thing milk = new Thing(milkString);
         Thing fans = new Thing(fansString);
         Thing peanuts = new Thing(peanutsString);
 
         fleet.add(obstacles);
-        fleet.add(standUp);
+        fleet.add(stand);
         fleet.add(lunch);
         fleet.add(milk);
         fleet.add(fans);
         fleet.add(peanuts);
 
-        lunch.complete();
-        milk.complete();
+
+
+        peanuts.complete();
+        stand.complete();
         fans.complete();
 
-        fleet.sortStuff(fleet);
+
         System.out.println(fleet);
+        fleet.sortStuff();
+        System.out.println(fleet);
+
     }
 }

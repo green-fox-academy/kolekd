@@ -1,10 +1,11 @@
 package FleetOfThings;
 
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class Thing implements Comparable<Thing>{
     private String name;
-    private boolean completed;
+    public boolean completed;
 
     public Thing(String name) {
         this.name = name;
@@ -30,10 +31,33 @@ public class Thing implements Comparable<Thing>{
 
     @Override
     public int compareTo(Thing o) {
-        if (this.name.compareTo(o.name) > 0){
-            return -1;
-        } else if (this.name.compareTo(o.name) < 0){
-            return +1;
+
+        if (this.completed == o.completed) {
+            if (this.name.compareTo(o.name) > 0) {
+                return -1;
+            } else if (this.name.compareTo(o.name) < 0) {
+                return +1;
+            } else {
+                return 0;
+            }
+
+        } else if (this.completed == !o.completed) {
+            if (this.name.compareTo(o.name) > 0) {
+                return -1;
+            } else if (this.name.compareTo(o.name) < 0) {
+                return +1;
+            } else {
+                return 0;
+            }
+
+        } else if (!this.completed == o.completed) {
+            if (this.name.compareTo(o.name) > 0) {
+                return -1;
+            } else if (this.name.compareTo(o.name) < 0) {
+                return +1;
+            } else {
+                return 0;
+            }
         } else {
             return 0;
         }
