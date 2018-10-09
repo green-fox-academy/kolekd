@@ -6,9 +6,8 @@ public class Plant{
 
     public int currentWater;
     public int minWater;
-    private int waterAbsorption;
-    private String type;
-    public boolean thirsty = currentWater < minWater;
+    public int waterAbsorption;
+    public String type;
 
     public Plant(int minWater, int waterAbsorption, String type, int currentWater) {
         this.minWater = minWater;

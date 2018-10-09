@@ -13,22 +13,26 @@ public class Main {
         Tree orange = new Tree(10, 40, "orange", 0);
 
         Flower yellow = new Flower(5, 70,"yellow", 0);
-        Flower blue = new Flower(5, 10, "blue", 0);
+        Flower blue = new Flower(5, 70, "blue", 0);
 
 
         Garden garden = new Garden();
-        garden.addFlower();
-        garden.addFlower(blue);
-        garden.addTree(purple);
-        garden.addTree(orange);
+        garden.addPlant(yellow);
+        garden.addPlant(blue);
+        garden.addPlant(purple);
+        garden.addPlant(orange);
 
 
-        System.out.println(garden.checkIfThirstyAll());
+        garden.checkIfThirsty();
 
-        garden.watering(40, garden.checkIfThirsty());
+        garden.watering(40, garden.checkIfThirstyTextless());
 
-        System.out.println(garden.checkIfThirstyAll());
+        garden.checkIfThirsty();
 
-        }
+        garden.watering(70, garden.checkIfThirstyTextless());
+
+        garden.checkIfThirsty();
+
+    }
     }
 
