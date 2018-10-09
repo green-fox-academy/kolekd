@@ -15,14 +15,10 @@ public class Dominoes {
         initializeDominoes();
         System.out.println(dominoes);
 
-//        for (int i = 0; i < dominoes.size(); i++) {
-//            for (int j = 0; j < i; j++) {
-//                (dominoes.get(i)).compareTo(dominoes.get(j));
-//            }
-//        }
-
         Collections.sort(dominoes);
         System.out.println(dominoes);
+
+
 
     }
 

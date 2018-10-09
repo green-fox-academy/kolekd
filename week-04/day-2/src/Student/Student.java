@@ -1,3 +1,5 @@
+package Student;
+
 public class Student implements Cloneable {
 
     private String name;
