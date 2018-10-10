@@ -5,8 +5,8 @@ public class Main {
 
         Anagram a = new Anagram();
 
-        String word1 = "earth";
-        String word2 = "heart";
+        String word1 = "reset";
+        String word2 = "trees";
 
         a.Anagrams(word1,word2);
 
