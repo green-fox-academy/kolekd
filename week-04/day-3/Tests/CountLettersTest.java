@@ -6,6 +6,7 @@ import java.util.Dictionary;
 import java.util.HashMap;
 
 public class CountLettersTest {
+
     @Test
     public void correctAmount (){
 
