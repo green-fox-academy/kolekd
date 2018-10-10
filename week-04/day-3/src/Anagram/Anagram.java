@@ -13,12 +13,17 @@ public class Anagram {
                         a = word1.charAt(i);
                         zeroMeansGood++;
                     }
-                    System.out.println(zeroMeansGood);
                 }
+            }
+            if (zeroMeansGood == word1.length()){
+                System.out.println("\"" + word1 + "\"" + " is an anagram of " + "\"" + word2 + "\"");
+            } else {
+                areAnagrams = false;
+                System.out.println("\"" + word1 + "\"" + " is not an anagram of " + "\"" + word2 + "\"");
             }
         } else {
             areAnagrams = false;
-            System.out.println("Words aren't the same length.");
+            System.out.println("Words \"" + word1 + "\" and \"" + word2 + "\" aren't the same length.");
         }
         return areAnagrams;
     }

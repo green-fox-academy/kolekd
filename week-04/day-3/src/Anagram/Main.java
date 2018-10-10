@@ -8,8 +8,8 @@ public class Main {
         String word1 = "reset";
         String word2 = "trees";
 
-        a.Anagrams(word1,word2);
 
+        System.out.println(a.Anagrams(word1,word2));
 
     }
 }
