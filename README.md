@@ -3,3 +3,9 @@
 * [Patchwork](https://github.com/kolekd/patchwork)
 * [Daniel Kolek's Website](https://github.com/kolekd/http-kolekd.github.io)
 * [Todo App](https://github.com/kolekd/todo-app)
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
