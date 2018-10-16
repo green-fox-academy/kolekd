@@ -2,8 +2,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
 
 
 public class Logs {
@@ -16,44 +14,40 @@ public class Logs {
         // Write a function that returns the GET / POST request ratio.
 
         Path logPath = Paths.get("log.txt");
-        array(logPath);
 
+        List <String> logList = fileToArray(logPath);
+
+        for (String str : logList){
+            System.out.println(str);
+        }
+
+        List <String> IPList = IPOnly(logList);
+
+        for (String str : IPList){
+            System.out.println(str);
+        }
     }
-    public static void array (Path logPath){
-        logPath = Paths.get("log.txt");
 
-        try{
-            List<String> lines = Files.readAllLines(logPath);
-            List<String> linesCut = new ArrayList<>();
-
-            int getCount = 0;
-            int postCount = 0;
-            for (int i = 0; i < lines.size(); i++) {
-                String buddy = lines.get(i);
-                if (buddy.contains("GET"));{
-                    getCount += 1;
-                } if (buddy.contains("POST")){
-                    postCount += 1;
-                }
-
+    public static List <String> IPOnly (List<String> list){
+        List <String> IPList = new ArrayList<>();
+        for (String str : list){
+            if (!IPList.contains(str.substring(27,38))){
+            IPList.add(str.substring(27,38));
             }
-            System.out.println(getCount);
-            System.out.println(postCount);
+        }
+        Collections.sort(IPList);
 
- //  UNIQUE ADRESSES SETUP
- //          for (int i = 0; i < lines.size(); i++) {
- //              String buddy = lines.get(i);
- //              String buddyCut = buddy.substring(28, 38);
- //              linesCut.add(buddyCut);
- //          }
+        return IPList;
+    }
 
- //          Collections.sort(linesCut);
- //          System.out.println(linesCut);
-
+    public static List <String>fileToArray(Path logPath){
+        List <String> list = new ArrayList<>();
+        try{
+            list = Files.readAllLines(logPath);
 
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
-
+        return list;
     }
 }
