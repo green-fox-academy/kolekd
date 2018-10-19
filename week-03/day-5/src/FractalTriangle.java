@@ -141,7 +141,7 @@ public class FractalTriangle {
     static int HEIGHT = 800;
     static double ANGLE = 137.5;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         JFrame jFrame = new JFrame("Drawing");
         jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         ImagePanel panel = new ImagePanel();
