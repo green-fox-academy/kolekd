@@ -41,5 +41,6 @@ public class Main {
         for(Fox fox : greenPallidaFoxes){
             System.out.println(fox.name);
         }
+
     }
 }
