@@ -17,7 +17,7 @@ public class GuessTheNumber {
 
         int input;
 
-        do{
+        do {
             input = in.nextInt();
 
             if (input == 8){
@@ -27,7 +27,6 @@ public class GuessTheNumber {
             } else if (input > 8){
                 System.out.println("The stored number is lower.");
             }
-        }
-        while (input != 8);
+        } while (input != 8);
     }
 }

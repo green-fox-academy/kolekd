@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class DrawDiamond {
@@ -16,33 +18,40 @@ public class DrawDiamond {
         //
         // The diamond should have as many lines as the number was
 
-        Scanner in = new Scanner (System.in);
-        int input = in.nextInt();
-        int k = 0;
+        Scanner in = new Scanner(System.in);
+        int input = 5;
 
-        for (int i = 1; i <= input; i++, k = 0) {
-            for (int space = 1; space <= input - i; ++space) {
-                System.out.print(" ");
-            }
+        StringBuilder starBuilder = new StringBuilder();
+        StringBuilder spaceBuilder = new StringBuilder();
 
-            while (k != 2 * i - 1) {
-                System.out.print("*");
-                k++;
-            }
-            System.out.println();
+        for (int i = 0; i < input; i++) {
+            starBuilder.append("*");
+            spaceBuilder.append(" ");
         }
 
-        for (int i = input; i <= 1; i--, k = 0) {
-            for (int space = 1; space <= input - i; ++space) {
-                System.out.print(" ");
-            }
+        String starLine = starBuilder.toString();
+        String spaceLine = spaceBuilder.toString();
+        List<String> stars = new ArrayList<>();
 
-            while (k != 2 * i - 1) {
-                System.out.print("*");
-                k++;
-            }
-            System.out.println();
+        for (int i = 0; i < input; i++) {
+            stars.add(i, starLine);
         }
 
+        int k = 1;
+        for (int i = 0; i < input; i++) {
+            if (i < input/2+1) {
+                spaceBuilder.replace(input / 2 - i, (input / 2 + 1) + i,
+                        starLine.substring(input / 2 - i, (input / 2 + 1) + i));
+                System.out.println(spaceBuilder.toString());
+                spaceBuilder.replace(0, spaceLine.length(), spaceLine);
+            } else {
+                spaceBuilder.replace(k, input - k,
+                        starLine.substring(k, input - k));
+                System.out.println(spaceBuilder.toString());
+                spaceBuilder.replace(0, spaceLine.length(), spaceLine);
+                k++;
+            }
+
+        }
     }
 }
