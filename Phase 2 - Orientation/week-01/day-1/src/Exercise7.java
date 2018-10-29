@@ -17,13 +17,13 @@ public class Exercise7 {
         }
 
         List <Character> lettersUnique = letters.stream()
-                                                .distinct()
-                                                .collect(Collectors.toList());
+                .distinct()
+                .collect(Collectors.toList());
 
         List <Integer> occurences = letters.stream()
-                                           .distinct()
-                                           .map(n -> Collections.frequency(letters, n))
-                                           .collect(Collectors.toList());
+                .distinct()
+                .map(n -> Collections.frequency(letters, n))
+                .collect(Collectors.toList());
 
         System.out.println(lettersUnique);
         System.out.println(occurences);
