@@ -1,0 +1,99 @@
+<html><head>
+    <title>Newsletter</title>
+    <style>
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        background-color:lightgrey;
+        font-weight: 50;   
+    }
+
+    #rectangle {
+        width:600px;
+        height:550px;
+        background:white;
+        margin-left: 490px;
+        margin-top: 5%;
+    }
+
+    .loginButton {
+        border: 0;
+        line-height: 0;
+        height: 52px;
+        width: 140px;
+        padding: 0 20px;
+        margin-left: 60px;
+        margin-top: 50px;
+        background-color:rgb(32,32,32);
+        border-radius: 31px;
+    }
+
+    .loginButtonText {
+        text-align: center;
+        color: white;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+    h2 {
+        margin-top: 38px;
+        font-size: 19px;
+    }
+
+    .forgot {
+        text-align: right;
+        margin-right: 60px;
+        font-size: 16px;
+        color: grey;
+    }
+
+    .forgotDecor {
+        text-decoration: none;
+    }
+
+    .userInfo {
+        margin-left: 60px;
+    }
+
+    .namePass {
+        margin-left: 60px;
+        width: 460px;
+        height: 60px;
+        font-size: 25px;
+        padding-left: 20px; 
+        border: 1px solid rgb(130,130,130);
+    }
+
+    .namePass:focus{
+        outline: none;
+        border: 1px solid #DDDDDD;
+        border-color:limegreen;
+        box-shadow: 0 0 10px limegreen;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="rectangle">
+        <br>
+        <br>
+
+        <form action="https://newsletter-ws.herokuapp.com/signup" method="POST">
+            <h2 class="userInfo">Name</h2>
+                <input type="name" class="namePass" name="name" placeholder="Daniel" required="">
+            <h2 class="userInfo">Email</h2>
+                <input type="email" class="namePass" name="email" placeholder="daniel@gmail.com" required="">
+
+            <button class="loginButton" action="">    
+            <div id="loginButtonDiv">    
+                <h3 class="loginButtonText">Login</h3>
+            </div>
+            </button>
+        </form>
+        
+    </div>
+
+
+</body></html>
