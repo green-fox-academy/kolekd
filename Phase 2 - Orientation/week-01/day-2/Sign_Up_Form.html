@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign_Up_Form</title>
+    <style>
+
+    body {
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        background-color:lightgrey;
+        font-weight: 50;   
+    }
+
+    #rectangle {
+        width:800px;
+        height:550px;
+        background:white;
+        margin-left: 390px;
+        margin-top: 5%;
+    }
+
+    #circleOR {
+        width: 55px;
+        height: 55px;
+        border-radius: 100%;
+        background: rgb(216, 216, 216);
+        margin-left: 360px;
+        margin-top: -250px;
+    }
+
+    .OR {
+        padding-top: 15px;
+        text-align: center;
+        font-weight: 100;
+    }
+
+    .FacebookButton {
+        position: absolute;
+        border: 0;
+        margin-left: 480px;
+        margin-top: -110px;
+        height: 45px;
+        width: 250px;
+        background-color: rgb(55, 62, 172);
+        color: white;
+        border-radius: 3px;
+    }
+
+    .TwitterButton {
+        position: absolute;
+        border: 0;
+        margin-left: 480px;
+        margin-top: -50px;
+        height: 45px;
+        width: 250px;
+        background-color: rgb(88, 172, 228);
+        color: white;
+        border-radius: 3px;
+    }
+
+    .GoogleButton {
+        position: absolute;
+        border: 0;
+        margin-left: 480px;
+        margin-top: 10px;
+        height: 45px;
+        width: 250px;
+        background-color: rgb(235, 93, 68);
+        color: white;
+        border-radius: 3px;
+    }
+
+    .loginButton {
+        border: 0;
+        line-height: 0;
+        height: 45px;
+        width: 165px;
+        padding: 0 20px;
+        margin-left: 50px;
+        margin-top: 50px;
+        background-color:rgb(0, 180, 141);
+        border-radius: 3px;
+    }
+    .loginButton:hover {
+        background-color:rgb(0, 0, 0);
+    }
+
+    .loginButtonText {
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        word-spacing: -3px;
+    }
+
+    h1 {
+        font-size: 38px;
+        margin-left: 50px;
+        font-weight: 100;
+    }
+    h2 {
+        margin-top: 38px;
+        font-size: 19px;
+    }
+
+    .forgot {
+        text-align: right;
+        margin-right: 60px;
+        font-size: 16px;
+        color: grey;
+    }
+
+    .forgotDecor {
+        text-decoration: none;
+    }
+
+    .userInfo {
+        margin-left: 50px;
+        width: 260px;
+        height: 60px;
+        font-size: 22px;
+        padding-left: 4px;
+        border: 0;
+        border-bottom: 1px solid grey;
+    }
+    .userInfo:focus{
+        outline: none;
+        border-bottom-width: 3px;
+        border-bottom-color:rgb(0, 180, 141);
+    }
+    .userInfo:hover::placeholder {
+        color: rgb(75, 161, 143);
+    }
+
+    .FacebookButton:hover, .TwitterButton:hover, .GoogleButton:hover {
+        border: solid black;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="rectangle">
+        <br>
+        <br>
+        <h1>Sign up</h1>
+        <form action="https://newsletter-ws.herokuapp.com/register" method="POST">
+                <input type="name" class="userInfo" name="name" placeholder="Username"  required>           <br>
+                <input type="email" class="userInfo" name="email" placeholder="E-mail" required>            <br>
+                <input type="password" class="userInfo" name="password" placeholder="Password" required>       <br>   
+                <input type="password" class="userInfo" name="passwordConfirmation" placeholder="Retype password" required>
+            
+            <br>
+        
+            <button class="loginButton" action>    
+            <div id= "loginButtonDiv">    
+                <h3 class="loginButtonText">SIGN ME UP</h3>
+            </div>
+            </button>
+        </form>
+
+    <div id="circleOR">
+        <h3 class="OR">OR</h3>
+    </div>
+
+    <form action= "https://www.facebook.com/">
+        <button class="FacebookButton">    
+            <div id= "fbdiv">    
+                <h3 class="FacebookButtonText">Log in with Facebook</h3>
+            </div>
+        </button>
+    </form>
+
+    <form action = "https://twitter.com/">
+        <button class="TwitterButton">    
+            <div id= "fbdiv">    
+                <h3 class="TwitterButtonText">Log in with Twitter</h3>
+            </div>
+        </button>
+    </form>
+
+    <form action = "https://www.google.com/">
+        <button class="GoogleButton">    
+            <div id= "fbdiv">    
+                <h3 class="FacebookButtonText">Log in with Google+</h3>
+            </div>
+        </button>
+    </form>
+
+</div>
+
+</body>
+
+</html>
