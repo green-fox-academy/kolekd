@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class Main {
 
+
     public static void main(String[] args) {
         SpringApplication.run(Main.class);
 
@@ -18,6 +19,7 @@ public class Main {
     @GetMapping(value="")
     @ResponseBody
     public String index (){
-        return "LOL";
+        return "Hello, I am the index page and I greet you.";
     }
+
 }
