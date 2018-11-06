@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simba Bank</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<p class="accDetails" th:utext="'Name: ' + ${name} + '<br>Balance: ' + ${balance} + '<br>Animal Type: ' + ${animalType}"/>
+
+</body>
+</html>

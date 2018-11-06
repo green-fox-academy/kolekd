@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simba Bank</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+<style>
+    td,th {border: 1px solid}
+    tr:nth-child(even){
+        background-color: lavender;
+    }
+</style>
+</head>
+<body style="font-size: 25px">
+<table style="width: 1200px; height: 500px; border-collapse: collapse;">
+
+    <tr style="text-align: left">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Balance</th>
+        <th>Animal Type</th>
+        <th>Title</th>
+    </tr>
+
+<tr class="accTable" th:each="acc: ${accList}">
+    <td th:text="${accStat.index}" />
+    <td th:text="${acc.name}" />
+    <td th:text="${acc.balance}" />
+    <td th:text="${acc.animalType}" />
+    <td>
+        <span th:if="${acc.getIsKing()}">King</span>
+         <span th:unless="${acc.getIsKing()}"></span>
+    </td>
+</tr>
+
+</table>
+</body>
+
+</html>
