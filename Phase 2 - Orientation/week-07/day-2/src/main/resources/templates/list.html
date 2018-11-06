@@ -5,14 +5,40 @@
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 <style>
-    td,th {border: 1px solid}
-    tr:nth-child(even){
-        background-color: lavender;
+    body {
+        background-color: aliceblue;
+        }
+    .accList {
+        margin-left: 190px;
+        margin-top: 100px;
+        width: 1200px;
+        height: 500px;
+        border-collapse: collapse;
+        border: solid;
+        border-width: 4px;
     }
+
+    td,th {
+        border: 1px solid;
+        padding-left: 10px;
+    }
+
+    th {
+        background-color: rgb(240,240,240);
+    }
+
+    tr:nth-child(even){
+        background-color: rgb(230,230,230);
+    }
+
+    tr:nth-child(odd){
+        background-color: white;
+    }
+
 </style>
 </head>
 <body style="font-size: 25px">
-<table style="width: 1200px; height: 500px; border-collapse: collapse;">
+<table class="accList">
 
     <tr style="text-align: left">
         <th>ID</th>
@@ -25,7 +51,7 @@
 
 <tr class="accTable" th:each="acc: ${accList}" th:style="${acc.getIsKing()} ? 'background-color: gold'">
 
-    <td th:text="${accStat.index}" />
+    <td id="firstColumn" th:text="${accStat.index}" />
     <td th:text="${acc.name}" />
     <td th:text="${acc.balance}" />
     <td th:text="${acc.animalType}" />
@@ -35,10 +61,15 @@
         <span th:unless="${acc.getIsKing()}"></span>
     </td>
 
-    <div th:switch="${acc.getIsGood()}">
-        <td th:case="true" th:text="'Good'"/>
-        <td th:case="false" th:text="'Bad'"/>
-    </div>
+    <td id="lastColumn">
+        <span th:if="${acc.getIsGood()}">Good</span>
+        <span th:unless="${acc.getIsGood()}">Bad</span>
+    </td>
+
+    <!--<div th:switch="${acc.getIsGood()}">-->                 <!--  switch version  -->
+        <!--<td th:case="true" th:text="'Good'"/>-->
+        <!--<td th:case="false" th:text="'Bad'"/>-->
+    <!--</div>-->
 
 </tr>
 
