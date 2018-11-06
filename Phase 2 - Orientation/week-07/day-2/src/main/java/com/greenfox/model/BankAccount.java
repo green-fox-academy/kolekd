@@ -1,5 +1,7 @@
 package com.greenfox.model;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,15 @@ public class BankAccount {
         this.animalType = animalType;
         this.isKing = isKing;
         this.isGood = isGood;
+    }
+
+    @RequestMapping(value = "/list/add")
+    public void increaseBalance(){
+        if (this.isGood){
+            this.balance += 100;
+        } else {
+            this.balance += 10;
+        }
     }
 
     public boolean getIsKing(){
