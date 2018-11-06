@@ -17,11 +17,11 @@ import java.util.List;
 @Controller
 public class WebController {
 
-    BankAccount simba = new BankAccount("Simba", 2000, "lion", false);
-    BankAccount mufasa = new BankAccount("Mufasa", 200000, "lion", true);
-    BankAccount ed = new BankAccount("Ed", 10, "hyena", false);
-    BankAccount zazu = new BankAccount("Zazu", 3400, "parrot", false);
-    BankAccount shenzi = new BankAccount("Shenzi", 34, "hyena", false);
+    BankAccount simba = new BankAccount("Simba", 2000, "lion", false, true);
+    BankAccount mufasa = new BankAccount("Mufasa", 200000, "lion", true, true);
+    BankAccount ed = new BankAccount("Ed", 10, "hyena", false, false);
+    BankAccount zazu = new BankAccount("Zazu", 3400, "parrot", false, true);
+    BankAccount shenzi = new BankAccount("Shenzi", 34, "hyena", false, false);
     List<BankAccount> list = new ArrayList<>();
 
     public WebController(){

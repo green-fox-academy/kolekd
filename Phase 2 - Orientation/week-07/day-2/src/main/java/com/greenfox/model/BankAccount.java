@@ -10,18 +10,24 @@ public class BankAccount {
     long balance;
     String animalType;
     boolean isKing;
+    boolean isGood;
 
     DecimalFormat numberFormat = new DecimalFormat("#.00 Zebra");
 
-    public BankAccount (String name, long balance, String animalType, boolean isKing){
+    public BankAccount (String name, long balance, String animalType, boolean isKing, boolean isGood){
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.isKing = isKing;
+        this.isGood = isGood;
     }
 
     public boolean getIsKing(){
         return this.isKing;
+    }
+
+    public boolean getIsGood(){
+        return this.isGood;
     }
 
     public String getName(){

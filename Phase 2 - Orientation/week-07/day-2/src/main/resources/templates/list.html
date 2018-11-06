@@ -20,17 +20,26 @@
         <th>Balance</th>
         <th>Animal Type</th>
         <th>Title</th>
+        <th>Good/Bad</th>
     </tr>
 
-<tr class="accTable" th:each="acc: ${accList}">
+<tr class="accTable" th:each="acc: ${accList}" th:style="${acc.getIsKing()} ? 'background-color: gold'">
+
     <td th:text="${accStat.index}" />
     <td th:text="${acc.name}" />
     <td th:text="${acc.balance}" />
     <td th:text="${acc.animalType}" />
+
     <td>
         <span th:if="${acc.getIsKing()}">King</span>
-         <span th:unless="${acc.getIsKing()}"></span>
+        <span th:unless="${acc.getIsKing()}"></span>
     </td>
+
+    <div th:switch="${acc.getIsGood()}">
+        <td th:case="true" th:text="'Good'"/>
+        <td th:case="false" th:text="'Bad'"/>
+    </div>
+
 </tr>
 
 </table>
