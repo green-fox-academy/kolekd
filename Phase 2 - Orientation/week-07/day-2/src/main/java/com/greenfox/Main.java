@@ -25,5 +25,4 @@ public class Main {
     public String enjoy (){
         return "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
     }
-
 }
