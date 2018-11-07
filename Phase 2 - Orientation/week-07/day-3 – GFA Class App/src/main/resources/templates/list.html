@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Green Fox Academy</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<style>
+    body {
+        background-color: aliceblue;
+    }
+    table {
+        font-size: 40px;
+        border-collapse: collapse;
+        width: 200px;
+        height: 300px;
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+    td,th {
+        border: 1px solid;
+        padding-left: 10px;
+    }
+    th {
+        background-color: lightcyan;
+    }
+
+</style>
+<body>
+
+<a href="http://localhost:8080/gfa">Home</a>
+<br>
+<br>
+
+<table>
+
+    <th>Name:</th>
+
+<tr class="studentList" th:each="student: ${studentList}">
+
+    <td th:text="${student}" />
+
+</tr>
+</table>
+
+</body>
+</html>

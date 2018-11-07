@@ -14,6 +14,22 @@
         color: black;
         font-size: 15px;
     }
+    td,th {
+        border: 1px solid;
+        padding-left: 10px;
+    }
+
+    th {
+        background-color: rgb(240,240,240);
+    }
+
+    tr:nth-child(even){
+        background-color: rgb(230,230,230);
+    }
+
+    tr:nth-child(odd){
+        background-color: white;
+    }
 </style>
 <body style="font-size: 30px">
 
@@ -26,3 +42,6 @@
 
 </body>
 </html>
+
+
+<div th:if="${jsem zmrd}">asfawgaefgaefbh</div>

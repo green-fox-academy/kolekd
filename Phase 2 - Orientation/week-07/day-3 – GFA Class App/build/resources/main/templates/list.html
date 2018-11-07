@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Green Fox Academy</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<style>
+    body {
+        background-color: aliceblue;
+    }
+</style>
+<body>
+
+<table>
+
+    <th>Name</th>
+
+<tr class="studentList" th:each="student: ${studentList}">
+
+    <td th:text="${student}" />
+
+</tr>
+</table>
+
+</body>
+</html>
