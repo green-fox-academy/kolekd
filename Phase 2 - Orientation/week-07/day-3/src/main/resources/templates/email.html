@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Printer Stuff</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<style>
+    body {
+        background-color: aliceblue;
+    }
+</style>
+<body style="font-size: 30px">
+
+<span th:if="${isValidEmail}"><a th:text="${inputEmail} + ' is valid.'" th:style="'color: green'"/></span>
+<span th:unless="${isValidEmail}"><a th:text="${inputEmail} + ' is invalid.'" th:style="'color: red'"/></span>
+
+</body>
+</html>
