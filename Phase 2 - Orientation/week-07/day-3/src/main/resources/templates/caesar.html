@@ -6,16 +6,27 @@
     <meta charset="utf-8" />
 </head>
 <style>
+    body {
+        background-color: aliceblue;
+    }
+
     .home {
         color: black;
         font-size: 15px;
     }
 </style>
-<body th:style="'background-color: ' + ${randColor} + ';'">
+<body style="font-size: 30px">
 
 <a class="home" href="http://localhost:8080/useful/">Home</a>
 <br>
 <br>
+
+<a th:utext="'Text: ' + ${text} + '<br>Number: ' + ${number}"/>
+<br>
+<br>
+<a th:text="'Encode - Result: ' + ${encode}"/>
+<br>
+<a th:text="'Decode - Result: ' + ${decode}"/>
 
 </body>
 </html>

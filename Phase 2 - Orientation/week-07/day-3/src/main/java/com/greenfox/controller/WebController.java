@@ -36,4 +36,13 @@ public class WebController {
         return "email";
     }
 
+    @RequestMapping("/useful/caesar")
+    public String caesar (Model model, @RequestParam String text, @RequestParam int number){
+        model.addAttribute("encode", service.caesar(text, number));
+        model.addAttribute("decode", service.caesar(text, -(number)));
+        model.addAttribute("text", text);
+        model.addAttribute("number", number);
+        return "caesar";
+    }
+
 }

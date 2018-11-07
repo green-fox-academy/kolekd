@@ -9,8 +9,17 @@
     body {
         background-color: aliceblue;
     }
+
+    .home {
+        color: black;
+        font-size: 15px;
+    }
 </style>
 <body style="font-size: 30px">
+
+<a class="home" href="http://localhost:8080/useful/">Home</a>
+<br>
+<br>
 
 <span th:if="${isValidEmail}"><a th:text="${inputEmail} + ' is valid.'" th:style="'color: green'"/></span>
 <span th:unless="${isValidEmail}"><a th:text="${inputEmail} + ' is invalid.'" th:style="'color: red'"/></span>
