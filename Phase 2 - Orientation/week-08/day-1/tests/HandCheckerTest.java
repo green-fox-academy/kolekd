@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class HandCheckerTest {
     HandChecker checker = new HandChecker();
     Hand hand = new Hand();
+    Card card = new Card();
 
     @Test
     public void checkWinningHandTest() {
@@ -20,10 +21,10 @@ public class HandCheckerTest {
     public void generateDeckTest(){
 
         assertEquals(hand.generateDeck().get(0).type,"spades");
-        assertEquals(hand.generateDeck().get(0).number,0);
+        assertEquals(hand.generateDeck().get(0).id,0);
 
         assertEquals(hand.generateDeck().get(hand.generateDeck().size() - 1).type,"clubs");
-        assertEquals(hand.generateDeck().get(hand.generateDeck().size() - 1).number,51);
+        assertEquals(hand.generateDeck().get(hand.generateDeck().size() - 1).id,51);
 
     }
 
@@ -40,8 +41,8 @@ public class HandCheckerTest {
         System.out.println(deck.size());
 
         for (int i = 0; i < hand1.size(); i++) {
-            System.out.println("value: " + hand1.get(i).number + "  type: " + hand1.get(i).type);
-            System.out.println("value: " + hand2.get(i).number + "  type: " + hand2.get(i).type);
+            System.out.println("value: " + hand1.get(i).id + "  type: " + hand1.get(i).type);
+            System.out.println("value: " + hand2.get(i).id + "  type: " + hand2.get(i).type);
         }
 
         assertEquals(hand1.size(), 5);
@@ -57,7 +58,7 @@ public class HandCheckerTest {
        cards.add(new Card(39,"clubs"));
        cards.add(new Card(47,"diamonds"));
 
-        assertEquals(hand.inspectHand(cards), "High Card: " + cards.get(2).number);
+        assertEquals(hand.inspectHand(cards), "High Card: " + cards.get(2).id);
     }
 
     @Test
@@ -71,7 +72,11 @@ public class HandCheckerTest {
         cards.add(new Card(38+13,"clubs"));
         cards.add(new Card(38,"diamonds"));
 
-        System.out.println("Pair: " + cards.get(3).number + " " + cards.get(4).number);
-        assertEquals(hand.pair(cards), "Pair: " + cards.get(3).number + " " + cards.get(4).number);
+        List<Integer> numbers = hand.cardsToNumbers(cards);
+
+
+        System.out.println("Pair of A:  " + card.getNameOfCard(numbers.get(3)) + " of " + cards.get(3).type
+                            + " and " + card.getNameOfCard(numbers.get(4)) + " of " + cards.get(4).type);
+        assertEquals(hand.pair(cards), "Pair of A:  " + cards.get(3).id + " " + cards.get(4).id);
     }
 }
