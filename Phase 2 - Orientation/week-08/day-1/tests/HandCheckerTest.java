@@ -59,4 +59,19 @@ public class HandCheckerTest {
 
         assertEquals(hand.inspectHand(cards), "High Card: " + cards.get(2).number);
     }
+
+    @Test
+    public void pairTest(){
+
+        List<Card> cards = new ArrayList<>();
+
+        cards.add(new Card(26,"diamonds"));
+        cards.add(new Card(13,"hearts"));
+        cards.add(new Card(9,"spades"));
+        cards.add(new Card(38+13,"clubs"));
+        cards.add(new Card(38,"diamonds"));
+
+        System.out.println("Pair: " + cards.get(3).number + " " + cards.get(4).number);
+        assertEquals(hand.pair(cards), "Pair: " + cards.get(3).number + " " + cards.get(4).number);
+    }
 }

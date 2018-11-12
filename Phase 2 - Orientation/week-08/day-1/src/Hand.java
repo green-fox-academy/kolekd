@@ -36,6 +36,22 @@ public class Hand {
         return hand;
     }
 
+    public List<Integer> cardsToNumbers (List <Card> cards){
+        List<Integer> numbers = new ArrayList<>();
+
+        for (int i = 0; i < cards.size(); i++) {
+            if (cards.get(i).number > 12 && cards.get(i).number < 26){
+                cards.get(i).number -= 13;
+            } else if (cards.get(i).number > 25 && cards.get(i).number < 39){
+                cards.get(i).number -= 26;
+            } else if (cards.get(i).number > 38){
+                cards.get(i).number -= 39;
+            }
+            numbers.add(cards.get(i).number);
+        }
+        return numbers;
+    }
+
     public int[] randNumbers(int number) {
         int[] numbers = new int[5];
 
@@ -51,24 +67,32 @@ public class Hand {
     }
 
     public String inspectHand(List<Card> hand){
-
-        List<Integer> numbers = new ArrayList<>();
-
-        for (int i = 0; i < hand.size(); i++) {
-            if (hand.get(i).number > 12 && hand.get(i).number < 26){
-                hand.get(i).number -= 13;
-            } else if (hand.get(i).number > 25 && hand.get(i).number < 39){
-                hand.get(i).number -= 26;
-            } else if (hand.get(i).number > 38){
-                hand.get(i).number -= 39;
-            }
-            numbers.add(hand.get(i).number);
-        }
+        List<Integer> numbers = cardsToNumbers(hand);
 
         Collections.sort(numbers);
-
 
         return "High Card: " + numbers.get(numbers.size() - 1);
     }
 
+    public String pair (List <Card> hand){
+        List<Integer> numbers = cardsToNumbers(hand);
+        int matchCount = 0;
+        int match1 = 0;
+        int match2 = 0;
+
+        for (int i = 0; i < numbers.size(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (i != j && numbers.get(i).equals(numbers.get(j))){
+                    match1 = numbers.get(i);
+                    match2 = numbers.get(j);
+                    matchCount++;
+                }
+            }
+        }
+        if (matchCount > 0){
+            return "Pair: " + match1 + " " + match2;
+        } else {
+            return "Fuck you.";
+        }
+    }
 }
