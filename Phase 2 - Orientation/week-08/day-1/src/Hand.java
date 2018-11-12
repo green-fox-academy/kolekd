@@ -1,21 +1,14 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Hand {
 
-    Card card = new Card();
-    ArrayList<Card> cards = new ArrayList();
-
-    public Hand(ArrayList<Card> cards) {
-        this.cards = cards;
-    }
-
     public Hand() {
-
     }
 
-    public ArrayList<Card> generateDeck() {
-        ArrayList<Card> deck = new ArrayList<>();
+    public List<Card> generateDeck() {
+        List<Card> deck = new ArrayList<>();
 
         for (int i = 0; i < 52; i++) {
             if (i < 13) {
@@ -31,9 +24,9 @@ public class Hand {
         return deck;
     }
 
-    public ArrayList<Card> getHand(ArrayList<Card> deck) {
-        ArrayList<Card> hand = new ArrayList<>();
-        int[] numbers = randNumbers(deck.size() - 1);
+    public List<Card> getHand(List<Card> deck) {
+        List<Card> hand = new ArrayList<>();
+        int[] numbers = randNumbers(deck.size());
 
         for (int i = 0; i < numbers.length; i++) {
             hand.add(deck.get(numbers[i]));
@@ -53,7 +46,29 @@ public class Hand {
         Collections.shuffle(list);
         for (int i = 0; i < 4; i++) {
             numbers[i] = list.get(i);
-        }
+         }
         return numbers;
     }
+
+    public String inspectHand(List<Card> hand){
+
+        List<Integer> numbers = new ArrayList<>();
+
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).number > 12 && hand.get(i).number < 26){
+                hand.get(i).number -= 13;
+            } else if (hand.get(i).number > 25 && hand.get(i).number < 39){
+                hand.get(i).number -= 26;
+            } else if (hand.get(i).number > 38){
+                hand.get(i).number -= 39;
+            }
+            numbers.add(hand.get(i).number);
+        }
+
+        Collections.sort(numbers);
+
+
+        return "High Card: " + numbers.get(numbers.size() - 1);
+    }
+
 }

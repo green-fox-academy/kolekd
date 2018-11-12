@@ -1,6 +1,8 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -28,13 +30,13 @@ public class HandCheckerTest {
     @Test
     public void getHandTest(){
 
-        ArrayList<Card> deck = hand.generateDeck();
+        List<Card> deck = hand.generateDeck();
         System.out.println(deck.size());
 
-        ArrayList<Card> hand1 = hand.getHand(deck);
+        List<Card> hand1 = hand.getHand(deck);
         System.out.println(deck.size());
 
-        ArrayList<Card> hand2 = hand.getHand(deck);
+        List<Card> hand2 = hand.getHand(deck);
         System.out.println(deck.size());
 
         for (int i = 0; i < hand1.size(); i++) {
@@ -42,6 +44,19 @@ public class HandCheckerTest {
             System.out.println("value: " + hand2.get(i).number + "  type: " + hand2.get(i).type);
         }
 
-//        assertEquals(hand.getHand().size(), 5);
+        assertEquals(hand1.size(), 5);
+        assertEquals(hand2.size(), 5);
+    }
+    @Test
+    public void inspectHandTest(){
+
+       List<Card> cards = new ArrayList<>();
+       cards.add(new Card(42,"diamonds"));
+       cards.add(new Card(18,"hearts"));
+       cards.add(new Card(9,"spades"));
+       cards.add(new Card(39,"clubs"));
+       cards.add(new Card(47,"diamonds"));
+
+        assertEquals(hand.inspectHand(cards), "High Card: " + cards.get(2).number);
     }
 }
