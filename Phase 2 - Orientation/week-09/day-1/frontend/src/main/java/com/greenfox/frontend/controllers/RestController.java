@@ -1,9 +1,9 @@
 package com.greenfox.frontend.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.Key;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 @org.springframework.web.bind.annotation.RestController
@@ -57,5 +57,28 @@ public class RestController {
         return response;
     }
 
+    @PostMapping("/dountil/{action}")
+    public HashMap<String, Object> dountil (@PathVariable String action,
+                                            @RequestBody (required = false) HashMap<String, Integer> input){
+        HashMap<String, Object> response = new HashMap<>();
+        if (action.equals("sum")){
+            int sum = 0;
+            for (int i = 1; i <= input.get("until"); i++) {
+                sum += i;
+            }
+            response.put("result", sum);    
+            return response;
+        } else if (action.equals("factor")){
+            int sum = 1;
+            for (int i = 1; i <= input.get("until"); i++) {
+                sum *= i;
+            }
+            response.put("result", sum);
+            return response;
+        } else {
+            response.put("error", "Please provide a number!");
+            return response;
+        }
+    }
 
 }
