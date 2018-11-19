@@ -61,24 +61,24 @@ public class RestController {
     public HashMap<String, Object> dountil (@PathVariable String action,
                                             @RequestBody (required = false) HashMap<String, Integer> input){
         HashMap<String, Object> response = new HashMap<>();
-        if (action.equals("sum")){
-            int sum = 0;
-            for (int i = 1; i <= input.get("until"); i++) {
-                sum += i;
+        if (!input.equals(null)) {
+            if (action.equals("sum")) {
+                int sum = 0;
+                for (int i = 1; i <= input.get("until"); i++) {
+                    sum += i;
+                }
+                response.put("result", sum);
+            } else if (action.equals("factor")) {
+                int sum = 1;
+                for (int i = 1; i <= input.get("until"); i++) {
+                    sum *= i;
+                }
+                response.put("result", sum);
             }
-            response.put("result", sum);    
-            return response;
-        } else if (action.equals("factor")){
-            int sum = 1;
-            for (int i = 1; i <= input.get("until"); i++) {
-                sum *= i;
-            }
-            response.put("result", sum);
-            return response;
         } else {
             response.put("error", "Please provide a number!");
-            return response;
         }
+        return response;
     }
 
 }
