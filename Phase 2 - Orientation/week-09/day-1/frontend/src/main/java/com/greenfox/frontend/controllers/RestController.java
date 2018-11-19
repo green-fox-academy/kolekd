@@ -1,6 +1,7 @@
 package com.greenfox.frontend.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
@@ -43,6 +44,18 @@ public class RestController {
         return response;
     }
 
+    @GetMapping("appenda/{appendable}")
+    public HashMap<String, String> appenda (@PathVariable String appendable){
+        HashMap<String, String> response = new HashMap<>();
+        StringBuilder stringBuilder = new StringBuilder(appendable);
+
+        if (appendable.length() > 0){
+            stringBuilder.append("a");
+            response.put("appended", stringBuilder.toString());
+        }
+
+        return response;
+    }
 
 
 }
