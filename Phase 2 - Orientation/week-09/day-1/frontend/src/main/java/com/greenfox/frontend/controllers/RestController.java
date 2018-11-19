@@ -1,5 +1,7 @@
 package com.greenfox.frontend.controllers;
 
+import com.greenfox.frontend.models.Result;
+import com.greenfox.frontend.models.SumMultiplyDouble;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Key;
@@ -79,6 +81,27 @@ public class RestController {
             response.put("error", "Please provide a number!");
         }
         return response;
+    }
+
+    @PostMapping("/arrays")
+    public Result arrays (@RequestBody(required = false) SumMultiplyDouble input){
+        Result result = new Result();
+
+        for (int i = 0; i < input.getNumbers().length; i++){
+            if (input.getWhat().equals("sum")){
+                int sum = 0;
+                sum += input.getNumbers()[i];
+                result.setResult(sum);
+            } else if (input.getWhat().equals("multiply")) {
+                int sum = 1;
+                sum *= input.getNumbers()[i];
+                result.setResult(sum);
+            } else if (input.getWhat().equals("double")) {
+                input.getNumbers()[i] *= 2;
+                result.setResult(input.getNumbers());
+            }
+        }
+        return result;
     }
 
 }
