@@ -4,15 +4,13 @@ import com.greenfox.frontend.models.Result;
 import com.greenfox.frontend.models.SumMultiplyDouble;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Key;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
     @GetMapping("/doubling")
-    public HashMap<String, Object> doubling(@RequestParam (required = false) Integer input){
+    public HashMap<String, Object> doubling(@RequestParam(required = false) Integer input){
         HashMap<String, Object> response = new HashMap<>();
 
         if (input != null) {
@@ -27,8 +25,8 @@ public class RestController {
     }
 
     @GetMapping("/greeter")
-    public HashMap<String, String> greeter (@RequestParam (required = false) String name,
-                                            @RequestParam (required = false) String title){
+    public HashMap<String, String> greeter (@RequestParam(required = false) String name,
+                                            @RequestParam(required = false) String title){
 
         HashMap<String, String> response = new HashMap<>();
 
@@ -61,7 +59,7 @@ public class RestController {
 
     @PostMapping("/dountil/{action}")
     public HashMap<String, Object> dountil (@PathVariable String action,
-                                            @RequestBody (required = false) HashMap<String, Integer> input){
+                                            @RequestBody(required = false) HashMap<String, Integer> input){
         HashMap<String, Object> response = new HashMap<>();
         if (!input.equals(null)) {
             if (action.equals("sum")) {
@@ -103,7 +101,5 @@ public class RestController {
         }
         return result;
     }
-
-
 
 }
