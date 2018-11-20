@@ -13,6 +13,10 @@ public class AppendA {
     public AppendA() {
     }
 
+    public String acquireData(){
+        return "appended: " + this.appended;
+    }
+
     public String getAppended() {
         return appended;
     }

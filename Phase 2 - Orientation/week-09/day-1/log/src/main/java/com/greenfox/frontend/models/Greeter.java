@@ -11,6 +11,10 @@ public class Greeter {
     public Greeter() {
     }
 
+    public String acquireData(){
+        return "welcome_message: " + welcome_message;
+    }
+
     public String getWelcome_message() {
         return welcome_message;
     }

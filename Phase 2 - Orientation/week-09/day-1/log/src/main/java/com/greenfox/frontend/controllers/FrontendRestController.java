@@ -23,6 +23,7 @@ public class FrontendRestController {
         Object response;
         if (input != null && input > 0) {
             response = new Doubling(input);
+            repo.save(new Log("/doubling", ((Doubling) response).acquireData()));
         } else {
             response = new ErrorMessages("Please provide an input!");
         }
@@ -42,6 +43,7 @@ public class FrontendRestController {
             response = new ErrorMessages( "Please provide a title!");
         } else {
             response = new Greeter(name, title);
+            repo.save(new Log("/greeter", ((Greeter) response).acquireData()));
         }
         return response;
     }
@@ -51,6 +53,7 @@ public class FrontendRestController {
         Object response;
         if (appendable.length() > 0) {
             response = new AppendA(appendable);
+            repo.save(new Log("/appenda/" + appendable, ((AppendA) response).acquireData()));
         } else {
             response = null;
         }
@@ -58,25 +61,12 @@ public class FrontendRestController {
     }
 
     @PostMapping("/dountil/{action}")
-    public HashMap<String, Object> dountil (@PathVariable String action,
-                                            @RequestBody(required = false) HashMap<String, Integer> input){
-        HashMap<String, Object> response = new HashMap<>();
+    public Object doUntil (@PathVariable String action, @RequestBody(required = false) HashMap<String, Integer> input) {
+        Object response;
         if (!input.equals(null)) {
-            if (action.equals("sum")) {
-                int sum = 0;
-                for (int i = 1; i <= input.get("until"); i++) {
-                    sum += i;
-                }
-                response.put("result", sum);
-            } else if (action.equals("factor")) {
-                int sum = 1;
-                for (int i = 1; i <= input.get("until"); i++) {
-                    sum *= i;
-                }
-                response.put("result", sum);
-            }
+            response = new DoUntil(input.get("until"), action);
         } else {
-            response.put("error", "Please provide a number!");
+            response = new ErrorMessages("Please provide a number!");
         }
         return response;
     }

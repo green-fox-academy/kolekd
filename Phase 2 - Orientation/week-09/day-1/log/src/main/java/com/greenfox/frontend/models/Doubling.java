@@ -13,6 +13,10 @@ public class Doubling {
     public Doubling() {
     }
 
+    public String acquireData(){
+        return "received: " + this.received + " result: " + this.result;
+    }
+
     public int getReceived() {
         return received;
     }
