@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -84,6 +85,51 @@ public class RestControllerTest {
                 .andExpect(jsonPath("$.appended", is("banana")));
     }
 
-    
+    @Test
+    public void doUntilSumCorrect() throws Exception {
+        mockMvc.perform(post("/dountil/sum")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": 7}"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", is(28)));
+    }
+
+    @Test
+    public void doUntilFactorCorrect() throws Exception {
+        mockMvc.perform(post("/dountil/factor")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": 4}"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", is(24)));
+    }
+
+    @Test
+    public void arraysSumCorrect() throws Exception {
+        mockMvc.perform(post("/arrays")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"what\": \"sum\", \"numbers\": [1,2,5,10]}"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", is(18)));
+    }
+
+    @Test
+    public void arraysMultiplyCorrect() throws Exception {
+        mockMvc.perform(post("/arrays")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"what\": \"multiply\", \"numbers\": [1,2,5,10]}"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", is(100)));
+    }
+
+    @Test
+    public void arraysDoubleCorrect() throws Exception {
+        mockMvc.perform(post("/arrays")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"what\": \"double\", \"numbers\": " + Arrays.asList(1,2,5,10) + "}"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", is(Arrays.asList(2,4,10,20))));
+    }
+
+
 
 }

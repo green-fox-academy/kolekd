@@ -84,16 +84,16 @@ public class FrontendRestController {
     @PostMapping("/arrays")
     public Result arrays (@RequestBody(required = false) SumMultiplyDouble input){
         Result result = new Result();
+        int sumSum = 0;
+        int multiplySum = 1;
 
         for (int i = 0; i < input.getNumbers().length; i++){
             if (input.getWhat().equals("sum")){
-                int sum = 0;
-                sum += input.getNumbers()[i];
-                result.setResult(sum);
+                sumSum += input.getNumbers()[i];
+                result.setResult(sumSum);
             } else if (input.getWhat().equals("multiply")) {
-                int sum = 1;
-                sum *= input.getNumbers()[i];
-                result.setResult(sum);
+                multiplySum *= input.getNumbers()[i];
+                result.setResult(multiplySum);
             } else if (input.getWhat().equals("double")) {
                 input.getNumbers()[i] *= 2;
                 result.setResult(input.getNumbers());
