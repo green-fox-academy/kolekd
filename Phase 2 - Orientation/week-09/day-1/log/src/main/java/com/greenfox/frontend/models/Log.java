@@ -15,8 +15,8 @@ public class Log {
     String endpoint;
     String data;
 
-    public Log(Timestamp createdAt, String endpoint, String data) {
-        this.createdAt = createdAt;
+    public Log(String endpoint, String data) {
+        this.createdAt = new Timestamp(System.currentTimeMillis());
         this.endpoint = endpoint;
         this.data = data;
     }
