@@ -47,15 +47,13 @@ public class FrontendRestController {
     }
 
     @GetMapping("appenda/{appendable}")
-    public HashMap<String, String> appenda (@PathVariable String appendable){
-        HashMap<String, String> response = new HashMap<>();
-        StringBuilder stringBuilder = new StringBuilder(appendable);
-
-        if (appendable.length() > 0){
-            stringBuilder.append("a");
-            response.put("appended", stringBuilder.toString());
+    public Object appenda (@PathVariable String appendable){
+        Object response;
+        if (appendable.length() > 0) {
+            response = new AppendA(appendable);
+        } else {
+            response = null;
         }
-
         return response;
     }
 
