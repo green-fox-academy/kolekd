@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 
 @org.springframework.web.bind.annotation.RestController
-public class RestController {
+public class FrontendRestController {
 
     @GetMapping("/doubling")
     public HashMap<String, Object> doubling(@RequestParam(required = false) Integer input){
