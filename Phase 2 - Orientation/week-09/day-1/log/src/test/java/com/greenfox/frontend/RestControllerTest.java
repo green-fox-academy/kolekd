@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.nio.charset.Charset;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -34,12 +35,18 @@ public class RestControllerTest {
 
     @Test
     public void doublingCorrectValue() throws Exception {
-        mockMvc.perform(get("/doubling")
-                .param("input", "5"))
+        mockMvc.perform(get("/doubling?input=5"))
                 .andExpect(status().is2xxSuccessful())
                 .andExpect(jsonPath("$.result", is(10)))
                 .andExpect(jsonPath("$.received", is(5)));
     }
 
+    @Test
+    public void doublingWrongValue() throws Exception {
+        mockMvc.perform(get("/doubling?input=5"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.result", not(12)))
+                .andExpect(jsonPath("$.received", is(5)));
+    }
 
 }
