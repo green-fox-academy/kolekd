@@ -1,45 +1,47 @@
 package com.greenfox.frontend.controllers;
 
-import com.greenfox.frontend.models.Result;
-import com.greenfox.frontend.models.SumMultiplyDouble;
+import com.greenfox.frontend.models.*;
+import com.greenfox.frontend.repository.LogRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.HashMap;
 
 @org.springframework.web.bind.annotation.RestController
 public class FrontendRestController {
 
+    LogRepository repo;
+
+    @Autowired
+    public FrontendRestController(LogRepository repo){
+        this.repo = repo;
+    }
+
     @GetMapping("/doubling")
-    public HashMap<String, Object> doubling(@RequestParam(required = false) Integer input){
-        HashMap<String, Object> response = new HashMap<>();
-
-        if (input != null) {
-            int result = input * 2;
-
-            response.put("received", input);
-            response.put("result", result);
+    public Object doubling(@RequestParam(required = false) Integer input){
+        Object response;
+        if (input != null && input > 0) {
+            response = new Doubling(input);
         } else {
-            response.put("error", "Please provide an input!");
+            response = new ErrorMessages("Please provide an input!");
         }
         return response;
     }
 
     @GetMapping("/greeter")
-    public HashMap<String, String> greeter (@RequestParam(required = false) String name,
-                                            @RequestParam(required = false) String title){
-
-        HashMap<String, String> response = new HashMap<>();
-
-        System.out.println("Name: " + name + "  Title: " + title);
+    public Object greeter (@RequestParam(required = false) String name,
+                            @RequestParam(required = false) String title){
+        Object response;
 
         if (name.length() < 1 && title.length() < 1){
-            response.put("error", "Please provide a name and a title!");
+            response = new ErrorMessages( "Please provide a name and a title!");
         } else if (name.length() < 1){
-            response.put("error", "Please provide a name!");
+            response = new ErrorMessages( "Please provide a name!");
         } else if (title.length() < 1){
-            response.put("error", "Please provide a title!");
+            response = new ErrorMessages( "Please provide a title!");
         } else {
-            response.put("welcome_message", "Oh, hi there " + name + ", my dear " + title + "!");
+            response = new Greeter(name, title);
         }
         return response;
     }
@@ -99,6 +101,8 @@ public class FrontendRestController {
                 result.setResult(input.getNumbers());
             }
         }
+
+
         return result;
     }
 
