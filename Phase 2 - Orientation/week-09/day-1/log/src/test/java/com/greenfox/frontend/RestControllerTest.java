@@ -77,4 +77,13 @@ public class RestControllerTest {
                 .andExpect(jsonPath("$.error", is("Please provide a title!")));
     }
 
+    @Test
+    public void appendACorrect() throws Exception {
+        mockMvc.perform(get("/appenda/banan"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.appended", is("banana")));
+    }
+
+    
+
 }
