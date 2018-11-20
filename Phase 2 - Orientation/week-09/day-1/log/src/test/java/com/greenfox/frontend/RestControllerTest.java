@@ -49,4 +49,32 @@ public class RestControllerTest {
                 .andExpect(jsonPath("$.received", is(5)));
     }
 
+    @Test
+    public void doublingNoInput() throws Exception {
+        mockMvc.perform(get("/doubling?input="))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.error", is("Please provide an input!")));
+    }
+
+    @Test
+    public void greeterCorrect() throws Exception {
+        mockMvc.perform(get("/greeter?name=Daniel&title=student"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.welcome_message", is("Oh, hi there Daniel, my dear student!")));
+    }
+
+    @Test
+    public void greeterMissingName() throws Exception {
+        mockMvc.perform(get("/greeter?name=&title=student"))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.error", is("Please provide a name!")));
+    }
+
+    @Test
+    public void greeterMissingTitle() throws Exception {
+        mockMvc.perform(get("/greeter?name=Daniel&title="))
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(jsonPath("$.error", is("Please provide a title!")));
+    }
+
 }
