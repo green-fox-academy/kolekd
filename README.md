@@ -9,6 +9,7 @@ More interesting stuff:
 * [Wanderer: The Game](https://github.com/kolekd/wanderer-java) - A simple monster killer game.
 * [Todo App](https://github.com/kolekd/todo-app)                                  
 <br><br/>
+
 Trivial stuff we did in the beginning of the course:
 * [Hello World](https://github.com/kolekd/hello-world)                            
 * [Git Lesson Repository](https://github.com/kolekd/git-lesson-repository)        
