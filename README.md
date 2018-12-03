@@ -1,5 +1,5 @@
 ## Introduction
-My name is Daniel Kolek, I'd like to pursue a career in programming.
+My name is Daniel Kolek, I'd like to pursue a career in programming.<br>
 This my repository used for storing any work done under the wings of the Green Fox Academy coding bootcamp.
 
 ## Links:
