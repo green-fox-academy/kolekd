@@ -8,11 +8,11 @@ More interesting stuff we did later on:
 * [P2P Chat](https://github.com/kolekd/p2p-chat) - Peer to peer chat application
 * [Wanderer: The Game](https://github.com/kolekd/wanderer-java) - A simple monster killer game
 * [Todo App](https://github.com/kolekd/todo-app) - A command line-based todo list application
-<br><br/>
+<br>
 
 My own stuff:
 * [The life of a square](https://github.com/kolekd/The-Tale) - An animation describing the life of a square
-<br><br/>
+<br>
 
 Trivial stuff we did in the beginning of the course:
 * [Hello World](https://github.com/kolekd/hello-world)                            
