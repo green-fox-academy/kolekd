@@ -1,5 +1,5 @@
 ## Introduction
-My name is Daniel Kolek, I'd like to pursue a career in programming.<br>
+My name is Daniel Kolek, I'm 21 years old, fresh out of an aviation-specialised high school and I'd like to pursue a career in programming.<br>
 This my repository used for storing any work done under the wings of the Green Fox Academy coding bootcamp.
 
 ## Links:
@@ -15,7 +15,7 @@ My own stuff:
 <br>
 
 Trivial stuff we did in the beginning of the course:
-* [Hello World](https://github.com/kolekd/hello-world)                            
-* [Git Lesson Repository](https://github.com/kolekd/git-lesson-repository)        
-* [Patchwork](https://github.com/kolekd/patchwork)                                
-* [Daniel Kolek's Website](https://github.com/kolekd/http-kolekd.github.io)       
+* [Hello World](https://github.com/kolekd/hello-world)
+* [Git Lesson Repository](https://github.com/kolekd/git-lesson-repository)
+* [Patchwork](https://github.com/kolekd/patchwork)     
+* [Daniel Kolek's Website](https://github.com/kolekd/http-kolekd.github.io)
