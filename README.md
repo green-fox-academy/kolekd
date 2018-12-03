@@ -1,6 +1,6 @@
 ## Introduction
 My name is Daniel Kolek, I'm 21 years old, fresh out of an aviation-specialised high school and I'd like to pursue a career in programming.<br>
-This my repository used for storing any work done under the wings of the Green Fox Academy coding bootcamp.
+This my repository used for storing any work done under the wings of the Green Fox Academy coding bootcamp. (Not every thing is fully completed with all the features, because of the limited time we had to complete each task)
 
 ## Links:
 
