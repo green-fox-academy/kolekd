@@ -6,6 +6,7 @@ This my repository used for storing any work done under the wings of the Green F
 
 Android:
 * [The Movie Database](https://github.com/kolekd/tmdb) - Movie browsing app using the TMDB API
+<br>
 
 More interesting stuff we did later on:
 * [P2P Chat](https://github.com/kolekd/p2p-chat) - Peer to peer chat application
